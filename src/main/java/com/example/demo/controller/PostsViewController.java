@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.PostService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @org.springframework.stereotype.Controller
 public class PostsViewController {
-
+    @org.springframework.beans.factory.annotation.Autowired
+    private PostService postsService;
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("appName", "Моё супер приложение");
+        model.addAttribute("posts", postsService.listAllPosts());
         return "list";
     }
 
