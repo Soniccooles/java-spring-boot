@@ -1,7 +1,7 @@
 package com.example.demo.model;
 
 public class Post {
-    private String text;
+    private final String text;
     private Integer likes;
 
     public Post(String text) {
