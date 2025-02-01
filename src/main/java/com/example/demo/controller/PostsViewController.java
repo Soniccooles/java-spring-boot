@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @org.springframework.stereotype.Controller
 public class PostsViewController {
-    @org.springframework.beans.factory.annotation.Autowired
+    @Autowired
     private PostService postsService;
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
